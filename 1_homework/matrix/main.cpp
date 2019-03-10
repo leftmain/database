@@ -68,7 +68,6 @@ int main(int argc, char ** argv) {
 	}
 
 	printf("Now cache-blocked algorithm\n");
-
 	t2 = clock();
 	block_transpose(a, n);
 	t2 = (clock() - t2) / CLOCKS_PER_SEC;
@@ -79,23 +78,22 @@ int main(int argc, char ** argv) {
 		free(b);
 		return 0;
 	}
-
 	printf("Block %.2lf times faster than usual\n", t1 / t2);
-	printf("Now cache-oblivious algorithm\n");
 
+/*
+	printf("Now cache-oblivious algorithm\n");
 	t3 = clock();
 	o_transpose(a, b, n, n);
 	t3 = (clock() - t3) / CLOCKS_PER_SEC;
 	print_matrix(a, n);
 	printf("Cache-oblivious time: %.2lf\n", t3);
-
-	printf("Cache-oblivious %.2lf times faster than usual\n", t1/t3);
-	
 	if (check(a, b, n, file)) {
 		free(a);
 		free(b);
 		return 0;
 	}
+	printf("Cache-oblivious %.2lf times faster than usual\n", t1/t3);
+*/
 
 	free(a);
 	free(b);
