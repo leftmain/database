@@ -37,7 +37,7 @@ int Tree::read(const char * name, int mm) {
 				delete new_root;
 				return -1;
 			}
-			new_root->get_data()[0] == c;
+			new_root->get_data()[0] = c;
 			new_root->get_child()[0] == *root;
 			new_root->get_child()[1] == *node;
 			delete root;

@@ -15,7 +15,7 @@ int Tree::read(const char * name) {
 			fclose(fp);
 			return -1;
 		}
-		*root == curr;
+		*root = curr;
 		goto_root();
 		curr.clear();
 		while (!(res = curr.read(fp))) {
@@ -24,14 +24,13 @@ int Tree::read(const char * name) {
 				fclose(fp);
 				return -1;
 			}
-			*child == curr;
+			*child = curr;
 			add(child);
 			curr.clear();
 		}
 	}
 	if (!feof(fp)) { fclose(fp); return res; }
 	fclose(fp);
-	if (!root->get_name()) return -2;
 	return 0;
 }
 

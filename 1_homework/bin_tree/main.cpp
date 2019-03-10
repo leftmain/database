@@ -10,7 +10,7 @@ int main(int argc, char ** argv) {
 	double t = 0.;
 	const char * filename = "a.txt";
 
-	if (argc > 2) {
+	if (argc != 2) {
 		printf("usage: %s [filename]\n", argv[0]);
 		return -1;
 	}

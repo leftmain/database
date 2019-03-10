@@ -4,7 +4,7 @@ class Node : public Student {
 private:
 	Node * left, * right;
 public:
-	Node(const char * name = 0, int value = 0) : Student(name, value) {
+	Node(int value = 0) : Student(value) {
 		left = right = 0;
 	}
 	Node(const Node& i) : Student(i) { left = right = 0; }
@@ -19,7 +19,7 @@ public:
 	void set_left(Node * l) { left = l; }
 	void set_right(Node * r) { right = r; }
 	void print() const {
-		printf("%s %d\n", get_name(), get_value());
+		printf("%d\n", get_value());
 	}
 };
 

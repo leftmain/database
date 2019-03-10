@@ -10,11 +10,11 @@ int main(int argc, char ** argv) {
 	double t = 0; // time
 	const char * filename = "a.txt";
 
-	if (argc < 2 || argc > 3 || (m = atoi(argv[1])) <= 0) {
+	if (argc != 3 || (m = atoi(argv[1])) <= 0) {
 		printf("usage: %s [m] [filename]\n", argv[0]);
 		return -4;
 	}
-	if (argc == 3) filename = argv[2];
+	filename = argv[2];
 
 	printf("Reading tree...\n");
 	t = clock();

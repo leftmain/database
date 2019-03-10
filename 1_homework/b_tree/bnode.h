@@ -57,8 +57,8 @@ public:
 		if (RIGHT) i = bin_search_r(a);
 		else i = bin_search_l(a);
 //		while (i < len && (*a < data[i]) > 0) i++;
-		for (int j = len; j > i; j--) data[j] == data[j-1];
-		data[i] == *a;
+		for (int j = len; j > i; j--) data[j] = data[j-1];
+		data[i] = *a;
 		len++;
 		return 0;
 	}
@@ -75,36 +75,36 @@ public:
 		else i = bin_search_l(a);
 //		while (i < len && (*a < data[i]) > 0) i++;
 		if (i < m) {
-			tmp == data[m-1];
-			for (j = m-1; j > i; j--) data[j] == data[j-1];
-			data[i] == *a;
+			tmp = data[m-1];
+			for (j = m-1; j > i; j--) data[j] = data[j-1];
+			data[i] = *a;
 			for (j = m; j < len; j++) {
-				new_node->data[j-m] == data[j];
+				new_node->data[j-m] = data[j];
 				data[j].clear();
 			}
 			new_node->len = len = m;
 		} else if (i == m) {
-			tmp == *a;
+			tmp = *a;
 			for (j = m; j < len; j++) {
-				new_node->data[j-m] == data[j];
+				new_node->data[j-m] = data[j];
 				data[j].clear();
 			}
 			new_node->len = len = m;
 		} else {
-			tmp == data[m];
+			tmp = data[m];
 			data[m].clear();
 			for (j = m+1; j < i; j++) {
-				new_node->data[j-m-1] == data[j];
+				new_node->data[j-m-1] = data[j];
 				data[j].clear();
 			}
-			new_node->data[i-m-1] == *a;
+			new_node->data[i-m-1] = *a;
 			for (j = i; j < len; j++) {
-				new_node->data[j-m] == data[j];
+				new_node->data[j-m] = data[j];
 				data[j].clear();
 			}
 			new_node->len = len = m;
 		}
-		*a == tmp;
+		*a = tmp;
 		tmp.clear();
 		return new_node;
 	}
@@ -112,10 +112,10 @@ public:
 	int add(Student * a, int m, int i, BNode * new_node) {
 		if (len == 2 * m) return 1;
 		for (int j = len; j > i; j--) {
-			data[j] == data[j-1];
+			data[j] = data[j-1];
 			child[j+1] == child[j];
 		}
-		data[i] == *a;
+		data[i] = *a;
 		child[i+1] == *new_node;
 		new_node->clear();
 		delete new_node;
@@ -137,40 +137,40 @@ public:
 		}
 		int j;
 		if (i < m) {
-			Student tmp; tmp == data[m-1];
+			Student tmp; tmp = data[m-1];
 			BNode n_tmp; n_tmp == child[m];
 			for (j = m-1; j > i; j--) {
-				data[j] == data[j-1];
+				data[j] = data[j-1];
 				child[j+1] == child[j];
 			}
-			data[i] == *a;
+			data[i] = *a;
 			child[i+1] == *res;
-			*a == tmp; tmp.clear();
+			*a = tmp; tmp.clear();
 			*res == n_tmp; n_tmp.clear();
 		} else if (i > m) {
 			new_node->child[0] == child[m+1];
 			child[m+1].clear();
 			for (j = m+1; j < i; j++) {
-				new_node->data[j-m-1] == data[j];
+				new_node->data[j-m-1] = data[j];
 				data[j].clear();
 				new_node->child[j-m] == child[j+1];
 				child[j+1].clear();
 			}
-			new_node->data[i-m-1] == *a;
+			new_node->data[i-m-1] = *a;
 			new_node->child[i-m] == *res; delete res;
 			for (j = i; j < len; j++) {
-				new_node->data[j-m] == data[j];
+				new_node->data[j-m] = data[j];
 				data[j].clear();
 				new_node->child[j-m+1] == child[j+1];
 				child[j+1].clear();
 			}
 			new_node->len = len = m;
-			*a == data[m]; data[m].clear();
+			*a = data[m]; data[m].clear();
 			return new_node;
 		}
 		new_node->child[0] == *res; delete res;
 		for (j = m; j < len; j++) {
-			new_node->data[j-m] == data[j];
+			new_node->data[j-m] = data[j];
 			data[j].clear();
 			new_node->child[j-m+1] == child[j+1];
 			child[j+1].clear();
