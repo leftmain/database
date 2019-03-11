@@ -1,3 +1,6 @@
+#ifndef TREE_H
+#define TREE_H
+
 #include <stdio.h>
 #include <time.h>
 #include "bnode.h"
@@ -76,4 +79,5 @@ public:
 	int search(const char *);
 };
 	
+#endif
 

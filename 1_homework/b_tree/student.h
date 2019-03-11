@@ -1,3 +1,6 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+
 #include <stdio.h>
 #include <string.h>
 
@@ -34,4 +37,6 @@ public:
 	void print() { printf("%d\n", value); }
 	void print_() { printf("[ %d ] ", value); }
 };
+
+#endif
 

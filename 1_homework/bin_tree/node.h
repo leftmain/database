@@ -1,3 +1,6 @@
+#ifndef NODE_H
+#define NODE_H
+
 #include "student.h"
 
 class Node : public Student {
@@ -22,4 +25,6 @@ public:
 		printf("%d\n", get_value());
 	}
 };
+
+#endif
 

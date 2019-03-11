@@ -1,3 +1,6 @@
+#ifndef BNODE_H
+#define BNODE_H
+
 #include "student.h"
 
 #define RIGHT 0
@@ -206,4 +209,6 @@ public:
 	int get_len() const { return len; }
 	void set_len(int l) { len = l; }
 };
+
+#endif
 
