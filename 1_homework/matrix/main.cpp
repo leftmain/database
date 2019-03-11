@@ -81,7 +81,8 @@ int main(int argc, char ** argv) {
 	printf("Block %.2lf times faster than usual\n", t1 / t2);
 
 /*
-	printf("Now cache-oblivious algorithm\n");
+	printf("Now not cache-oblivious algorithm\n");
+//	printf("Now cache-oblivious algorithm\n");
 	t3 = clock();
 	o_transpose(a, b, n, n);
 	t3 = (clock() - t3) / CLOCKS_PER_SEC;
