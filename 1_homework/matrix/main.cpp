@@ -24,12 +24,12 @@ int main(int argc, char ** argv) {
 	n = pow(2, n);
 	printf("n = %d\n", n);
 
-	a = (double *)malloc(n * n * sizeof(double));
+	a = (double *)calloc(n * n, sizeof(double));
 	if (!a) {
 		printf("Not enough memory\n");
 		return -2;
 	}
-	b = (double *)malloc(n * n * sizeof(double));
+	b = (double *)calloc(n * n, sizeof(double));
 	if (!b) {
 		free(a);
 		printf("Not enough memory\n");

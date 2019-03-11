@@ -82,21 +82,7 @@ void o_transpose(double * a, double * b, int m, int n, int offset) {
 			}
 		}
 //	printf("!\n"); print_matrix(a, m, n);
-	} else { return;
-		for (int i = 0; i < m/2; i++) {
-			for (int j = 0; j < n; j++) {
-				b[i * 2*n + j] = a[i * (n + offset) + j];
-				b[i * 2*n + j + n] = a[(i + m/2) * (n + offset) + j];
-			}
-		}
-//		print_matrix(b, m, n);
-//	printf("a:\n");print_matrix(b, N);
-//	printf("b:\n");print_matrix(b, N);
-		o_transpose(a, b, m/2, n, offset + n/2);
-	printf("@\n");print_matrix(a + m * n/2, m, n/2);
-		o_transpose(a + m * n/2, b + m * n/2, m/2, n, offset + n/2);
-	printf("@\n");print_matrix(a + m * n/2, m, n/2);
-	}
+	} else { return; }
 }
 
 // -------------------------------------------------------------
